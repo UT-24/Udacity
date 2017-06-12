@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ut's Portfolio</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato:400,300,100">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js">
+    </script>
+    <script src="js/bootstrap.min.js"></script>
+
+</head>
+  <body>
+    <!-- Header section contains the udacity image and 2 headings -->
+    <header class="container">
+     <div class="row flex-movement">
+      <div class="col-md-6 sizing">
+        <!--Image obtained from: https://d125fmws0bore1.cloudfront.net/assets/udacity_share-46db4b8faf075a5af5a1070a7fa0ad3639783609ff45f447e4ea467fe3aa9d32.png -->
+        <img src="./img/logo.jpg" class="img-responsive" alt="Udacity logo">
+      </div>
+      <div class="col-md-6 text-uppercase text-right light sizing">
+        <h1>Jane Doette</h1>
+        <h5>Front-end Ninja</h5>
+      </div>
+     </div>
+    </header>
+    <!-- This section holds the horizontal line-->
+    <section class="container">
+     <div class = "row">
+      <div class="col-md-12">
+        <hr class="header-line">
+      </div>
+     </div>
+    </section>
+    <!-- This section holds the central image -->
+    <section class="container">
+     <div class="row">
+      <div class="col-md-12">
+        <!--Image obtained from:  https://www.wplama.cz/wp-content/uploads/2014/05/HTML.jpg -->
+        <img src="./img/main.jpg" class="img-responsive" alt="HTML code">
+      </div>
+     </div>
+    </section>
+    <!--This section holds the label for udacity github projects -->
+    <section class="container">
+     <div class="row">
+      <div class="col-md-12">
+        <h2 class="grey-heading">Featured Work</h2>
+      </div>
+     </div>
+    </section>
+    <!--This section holds the 3 projects that are featured -->
+    <section class="container">
+     <div class="row">
+      <article class="col-md-4">
+        <!--Image obtained from: https://lh3.googleusercontent.com/-dAOjVzgqTls/VwsouojTQbI/AAAAAAAAAXU/sFoH_2yyWpoFtmObylY9X_QlBOXKXGevA/w424-h318-n/Appify.jpg-->
+        <img src="./img/appify.jpg" class="img-responsive expand" data-toggle="modal" data-target="#project1" alt=" Appify image">
+        <h3 class="text-uppercase text-center image-text">Appify</h3>
+        <p class="text-center image-text"><a href="http://github.com/udacity/Appify">http://github.com/udacity/Appify/</a></p>
+      </article>
+      <article class="col-md-4">
+        <!--Image obtained from: https://cdn.shutterstock.com/shutterstock/videos/16463365/thumb/1.jpg-->
+        <img src="./img/sunflower.jpg" class="img-responsive expand" data-toggle="modal" data-target="#project2" alt="Sunflower image">
+        <h3 class="text-uppercase text-center image-text">Sunflower</h3>
+        <p class="text-center image-text"><a href="http://github.com/udacity/Sunflower">http://github.com/udacity/Sunflower/</a></p>
+      </article>
+      <article class="col-md-4">
+        <!--Image obtained from one of the practice udacity projects -->
+        <img src="./img/bokeh.jpg" class="img-responsive expand" data-toggle="modal" data-target="#project3" alt="Bokeh image">
+        <h3 class="text-uppercase text-center image-text">Bokeh</h3>
+        <p class="text-center image-text"><a href="http://github.com/udacity/Bokeh">http://github.com/udacity/Bokeh/</a></p>
+      </article>
+     </div>
+    </section>
+    <!-- Empty Footer at the bottom of the page-->
+    <footer class="container">
+     <div class="row">
+      <div class = "col-md-12">
+        <p>
+        </p>
+        <p>
+        </p>
+      </div>
+     </div>
+    </footer>
+      <!-- Modal Popup for Appify-->
+    <div class="modal fade" id="project1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="myModalLabel1">Appify Page</h4>
+                </div>
+                <div class="modal-body">
+                    <img class="img-responsive" src="img/appify.jpg" alt="Appify image">
+                    This project is to appify something. To appify: To create or modify an existing service as to make an application of it which in turn can be used in a larger application.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+      <!-- Modal Popup for Sunflower-->
+    <div class="modal fade" id="project2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="myModalLabel2">Sunflower Page</h4>
+                </div>
+                <div class="modal-body">
+                    <img class="img-responsive" src="img/sunflower.jpg" alt="Sunflower image">
+                    This project is about Sunflowers. Helianthus or sunflowers (from the Greek: Helios, "sun" and anthos, "flower").
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal Popup for Bokeh-->
+    <div class="modal fade" id="project3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel3" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="myModalLabel3">Bokeh Page</h4>
+                </div>
+                <div class="modal-body">
+                    <img class="img-responsive" src="img/bokeh.jpg" alt="Bokeh image">
+                    This project is about the art of Bokeh. In photography, Bokeh is the aesthetic quality of the blur produced in the out-of-focus parts of an image produced by a lens.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>

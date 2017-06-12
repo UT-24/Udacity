@@ -1,0 +1,36 @@
+/* add your CSS here */
+.interesting-fact
+{
+	font-style: italic;
+}
+
+.list-label
+{
+	font-weight: bold;
+}
+
+.list-items
+{
+	list-style-type: none;
+	padding-left: 0px;
+}
+
+#name-image-animal-data
+{
+	width: 300px;
+	border: 1px solid lightgrey;
+	padding: 10px;
+	box-shadow: 5px 5px 3px lightgrey;
+}
+
+#animal-data
+{
+	border: 1px solid lightgrey;
+	padding: 7px;
+}
+
+.pictures
+{
+	padding-bottom: 7px;
+}
+

@@ -1,0 +1,50 @@
+body
+{
+    font-family: "Lato";
+}
+
+@media screen and (min-width: 600px) and (max-width: 1000px)
+{
+    .expand
+    {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 1000px)
+{
+    .flex-movement
+    {
+      display: flex;
+    }
+
+    .sizing
+    {
+      width: 50%;
+    }
+}
+
+.header-line
+{
+    height: 3px;
+    color: #7d97ad;
+    background-color: #7d97ad;
+}
+
+.light
+{
+    font-weight: 300;
+    font-style: normal;
+    color: #2d3c49;
+}
+
+.grey-heading
+{
+     color: #7d97ad;
+     font-weight: 400;
+}
+
+.image-text
+{
+    color: #2d3c49;
+}
