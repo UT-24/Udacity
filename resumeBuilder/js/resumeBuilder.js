@@ -13,8 +13,7 @@
     "welcomeMessage": "Hope you enjoy viewing my resume!",
     "skills": ['Programming', 'Teaching', 'Curriculum Design', 'Project Management'],
     "biopic": "images/LinkedIn.jpg",
-    display: function()
-    {
+    display: function() {
         var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
         $("#header").prepend(formattedRole);
 
@@ -42,11 +41,9 @@
         var formattedWelcomeMessage = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
         $("#header").append(formattedWelcomeMessage);
 
-        if (bio.skills.length > 0)
-        {
+        if (bio.skills.length > 0) {
             $("#header").append(HTMLskillsStart);
-            bio.skills.forEach(function(element)
-            {
+            bio.skills.forEach(function(element) {
                 var formattedSkill = HTMLskills.replace("%data%", element);
                 $("#header").append(formattedSkill);
             });
@@ -60,45 +57,43 @@
     {
         "employer" : "Year Up",
         "title" : "IT Instructor II",
-        "dates" : "Apr 2016 - current",
         "location" : "Atlanta, GA",
+        "dates" : "Apr 2016 - in progress",
         "description" : "Instructed courses in HTML, CSS, JavaScript, Databases, Advanced Excel, Quality Assurance and Software Testing, and Computer Applications. Developed curriculum. Coached students. Worked on stretch projects for Year Up National to revamp the Quality Assurance curriculum, and improve middle management processes, and in the process earned a Diploma in the Emerging Leaders Program."
     },
     {
         "employer" : "Year Up",
         "title" : "IT Instructor",
-        "dates" : "Jan 2015 - Apr 2016",
         "location" : "Atlanta, GA",
+        "dates" : "Jan 2015 - Apr 2016",
         "description" : "Designed and developed the Software Development Track for Year Up Atlanta. Instructed courses in Java, Databases, Advanced Excel, Quality Assurance and Software Testing, and Computer Applications. Developed curriculum. Coached students. Worked on stretch projects such as serving on the Women's group in Atlanta and developing assessments for entry into the Software Development Track during admissions."
     },
     {
         "employer" : "Goldman Sachs",
         "title" : "Vice President",
-        "dates" : "Oct 2012 - Dec 2014",
         "location" : "New York, NY",
+        "dates" : "Oct 2012 - Dec 2014",
         "description" : "Designed and developed framework to build applications in .NET, managed projects, supported deployed applications, assisted in interviewing and hiring, served on the Securities Division Women In Technology Committee."
     },
     {
         "employer" : "Goldman Sachs",
         "title" : "Senior Analyst",
-        "dates" : "Oct 2005 - Oct 2012",
         "location" : "New York, NY",
+        "dates" : "Oct 2005 - Oct 2012",
         "description" : "Designed and developed framework to build applications in .NET, managed projects, supported deployed applications."
     },
     {
         "employer" : "Goldman Sachs",
         "title" : "Analyst",
-        "dates" : "Oct 2004 - Oct 2005",
         "location" : "New York, NY",
+        "dates" : "Oct 2004 - Oct 2005",
         "description" : "Developed framework to build applications in .NET, supported deployed applications."
     }
     ],
-    display: function()
-    {
+    display: function() {
         var jobs = work.jobs;
 
-        for (var i = 0; i < jobs.length; i++)
-        {
+        for (var i = 0; i < jobs.length; i++) {
             $("#workExperience").append(HTMLworkStart);
 
             var formattedEmployer = HTMLworkEmployer.replace("%data%", jobs[i].employer);
@@ -135,27 +130,25 @@ var education =
         "degree" : "Bachelor of Engineering (Honors)",
         "majors" : ["Computer Science"],
         "dates" : "Sep 1998 - Jun 2002",
-        "url" : "http://www.bits-pilani.ac.in/",
+        "url" : "http://www.bits-pilani.ac.in/"
     }
     ],
   "onlineCourses": [
     {
         "title": "Front-End Web Developer Nanodegree",
         "school": "Udacity",
-        "dates": "Feb 2017 - current",
+        "dates": "Feb 2017 - in progress",
         "url": "http://www.udacity.com/"
     }
     ],
-    display: function()
-    {
-        for (var i = 0; i < this.schools.length; i++)
-        {
+    display: function() {
+        for (var i = 0; i < this.schools.length; i++) {
             $("#education").append(HTMLschoolStart);
 
             var formattedSchoolName = HTMLschoolName.replace("%data%", this.schools[i].name);
             var formattedDegree = HTMLschoolDegree.replace("%data%", this.schools[i].degree);
             var formattedDegreeDetails = formattedSchoolName + formattedDegree;
-            formattedDegreeDetails = formattedDegreeDetails.replace("#", this.schools[i].url)
+            formattedDegreeDetails = formattedDegreeDetails.replace("#", this.schools[i].url);
             var formattedSchoolDates = HTMLschoolDates.replace("%data%", this.schools[i].dates);
             var formattedSchoolLocation = HTMLschoolLocation.replace("%data%", this.schools[i].location);
             var formattedMajor = HTMLschoolMajor.replace("%data%", this.schools[i].majors);
@@ -167,15 +160,14 @@ var education =
 
         $("#education").append(HTMLonlineClasses);
 
-        for (var i = 0; i < this.onlineCourses.length; i++)
-        {
+        for (var j = 0; j < this.onlineCourses.length; j++) {
             $("#education").append(HTMLschoolStart);
-            var formattedTitle = HTMLonlineTitle.replace("%data%", this.onlineCourses[i].title);
-            var formattedOnlineSchool = HTMLonlineSchool.replace("%data%", this.onlineCourses[i].school);
+            var formattedTitle = HTMLonlineTitle.replace("%data%", this.onlineCourses[j].title);
+            var formattedOnlineSchool = HTMLonlineSchool.replace("%data%", this.onlineCourses[j].school);
             var formattedOnlineCourseDetails = formattedTitle + formattedOnlineSchool;
-            formattedOnlineCourseDetails = formattedOnlineCourseDetails.replace("#", this.onlineCourses[i].url);
-            var formattedOnlineSchoolDates = HTMLonlineDates.replace("%data%", this.onlineCourses[i].dates);
-            var formattedURL = HTMLonlineURL.replace("%data%", this.onlineCourses[i].url);
+            formattedOnlineCourseDetails = formattedOnlineCourseDetails.replace("#", this.onlineCourses[j].url);
+            var formattedOnlineSchoolDates = HTMLonlineDates.replace("%data%", this.onlineCourses[j].dates);
+            var formattedURL = HTMLonlineURL.replace("%data%", this.onlineCourses[j].url);
             $(".education-entry:last").append(formattedOnlineCourseDetails);
             $(".education-entry:last").append(formattedOnlineSchoolDates);
             $(".education-entry:last").append(formattedURL);
@@ -184,7 +176,7 @@ var education =
 };
 
 //object to hold information about projects completed on Udacity
-var projectDetails = {
+var projects = {
 projects: [
 {
     "title": "Mockup to Article",
@@ -205,10 +197,8 @@ projects: [
     "images": ["images/portfolio.jpg"]
 }
 ],
-display: function()
-{
-    for (var i = 0; i < this.projects.length; i++)
-    {
+display: function() {
+    for (var i = 0; i < this.projects.length; i++) {
         $("#projects").append(HTMLprojectStart);
 
         var formattedTitle = HTMLprojectTitle.replace("%data%", this.projects[i].title);
@@ -227,10 +217,76 @@ display: function()
    }
 };
 
-function setUpMap()
-{
+//adds the map section to the page
+function setUpMap() {
     $("#mapDiv").append(googleMap);
 }
+
+//adds button to internationalize name
+function setUpInternationalizeName() {
+    $("#main").append(internationalizeButton);
+}
+
+//setup contact information in the footer
+function setUpFooter() {
+    var formattedMobile = HTMLmobile.replace("%data%", bio.contacts["mobile"]);
+    $("#footerContacts").append(formattedMobile);
+
+    var formattedEmail = HTMLemail.replace("%data%", bio.contacts["email"]);
+    $("#footerContacts").append(formattedEmail);
+
+    var formattedGithub = HTMLgithub.replace("%data%", bio.contacts["github"]);
+    $("#footerContacts").append(formattedGithub);
+
+    var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts["twitter"]);
+    $("#footerContacts").append(formattedTwitter);
+
+    var formattedLocation = HTMLlocation.replace("%data%", bio.contacts["location"]);
+    $("#footerContacts").append(formattedLocation);
+}
+
+//makes name internationalized
+function inName(name) {
+    var names = name.split(" ");
+    names[1] = names[1].toUpperCase();
+    var internationalizedName = names.join(" ");
+    return internationalizedName;
+}
+
+bio.display();
+work.display();
+education.display();
+projects.display();
+setUpMap();
+setUpFooter();
+
+//jquery click events below to add customization to my resume
+$(document).ready(function() {
+    //send email when someone clicks on "Let's Connect" text in the resume
+    $(".center-text").click(function() {
+         var email = bio.contacts["email"];
+         var subject = bio.name + ": About your resume";
+         var emailBody = "Dear " + bio.name;
+         window.location = 'mailto:' + email + '?subject=' + subject + '&body=' + emailBody;
+    });
+
+    //collapse work information when heading is clicked
+     $("#workExperience h2").click(function() {
+         $(".work-entry").toggle();
+    });
+
+    //collapse project information when heading is clicked
+     $("#projects h2").click(function() {
+         $(".project-entry").toggle();
+    });
+
+     //collapse education information when heading is clicked
+     $("#education h2").click(function() {
+         $(".education-entry").toggle();
+    });
+});
+
+//This section is unused code from JavaScript Basics course
 
 /*function locationizer(work)
 {
@@ -247,55 +303,5 @@ function setUpMap()
 console.log(locationizer(work));
 */
 
-//adds button to internationalize name
-function setUpInternationalizeName()
-{
-    $("#main").append(internationalizeButton);
-}
-
-//makes name internationalized
-function inName(name)
-{
-    var names = name.split(" ");
-    names[1] = names[1].toUpperCase();
-    var internationalizedName = names.join(" ");
-    return internationalizedName;
-}
-
-bio.display();
-work.display();
-education.display();
-projectDetails.display();
-setUpMap();
-setUpInternationalizeName();
-
-//jquery click events below
-$(document).ready(function()
-{
-    //send email when someone clicks on "Let's Connect" in the resume
-    $("#lets-connect").click(function()
-    {
-         var email = bio.contacts["email"];
-         var subject = bio.name + ": About your resume";
-         var emailBody = "Dear " + bio.name;
-         window.location = 'mailto:' + email + '?subject=' + subject + '&body=' + emailBody;
-    });
-
-    //collapse work information when heading is clicked
-     $("#workExperience h2").click(function()
-    {
-         $(".work-entry").toggle();
-    });
-
-    //collapse project information when heading is clicked
-     $("#projects h2").click(function()
-    {
-         $(".project-entry").toggle();
-    });
-
-     //collapse education information when heading is clicked
-     $("#education h2").click(function()
-    {
-         $(".education-entry").toggle();
-    });
-});
+//Don't add the internationalize button, it looks odd on the page
+//setUpInternationalizeName();
