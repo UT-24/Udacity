@@ -189,11 +189,11 @@ function initializeMap() {
         }
       }
 
-      for (var i = 0; i < education.schools.length; i++)
+      for (var j = 0; j < education.schools.length; j++)
       {
-        if (title.includes(education.schools[i].location.toLowerCase()))
+        if (title.includes(education.schools[j].location.toLowerCase()))
         {
-          markerInfo += education.schools[i].name + " - " + education.schools[i].degree + "<br/>";
+          markerInfo += education.schools[j].name + " - " + education.schools[j].degree + "<br/>";
         }
       }
 

@@ -20,19 +20,19 @@
         var formattedName = HTMLheaderName.replace("%data%", bio.name);
         $("#header").prepend(formattedName);
 
-        var formattedMobile = HTMLmobile.replace("%data%", bio.contacts["mobile"]);
+        var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
         $("#topContacts").append(formattedMobile);
 
-        var formattedEmail = HTMLemail.replace("%data%", bio.contacts["email"]);
+        var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
         $("#topContacts").append(formattedEmail);
 
-        var formattedGithub = HTMLgithub.replace("%data%", bio.contacts["github"]);
+        var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
         $("#topContacts").append(formattedGithub);
 
-        var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts["twitter"]);
+        var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
         $("#topContacts").append(formattedTwitter);
 
-        var formattedLocation = HTMLlocation.replace("%data%", bio.contacts["location"]);
+        var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
         $("#topContacts").append(formattedLocation);
 
         var formattedBioPic = HTMLbioPic.replace("%data%", bio.biopic);
@@ -229,19 +229,19 @@ function setUpInternationalizeName() {
 
 //setup contact information in the footer
 function setUpFooter() {
-    var formattedMobile = HTMLmobile.replace("%data%", bio.contacts["mobile"]);
+    var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
     $("#footerContacts").append(formattedMobile);
 
-    var formattedEmail = HTMLemail.replace("%data%", bio.contacts["email"]);
+    var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
     $("#footerContacts").append(formattedEmail);
 
-    var formattedGithub = HTMLgithub.replace("%data%", bio.contacts["github"]);
+    var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
     $("#footerContacts").append(formattedGithub);
 
-    var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts["twitter"]);
+    var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
     $("#footerContacts").append(formattedTwitter);
 
-    var formattedLocation = HTMLlocation.replace("%data%", bio.contacts["location"]);
+    var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
     $("#footerContacts").append(formattedLocation);
 }
 
@@ -264,7 +264,7 @@ setUpFooter();
 $(document).ready(function() {
     //send email when someone clicks on "Let's Connect" text in the resume
     $(".center-text").click(function() {
-         var email = bio.contacts["email"];
+         var email = bio.contacts.email;
          var subject = bio.name + ": About your resume";
          var emailBody = "Dear " + bio.name;
          window.location = 'mailto:' + email + '?subject=' + subject + '&body=' + emailBody;
