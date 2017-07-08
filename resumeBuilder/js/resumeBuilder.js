@@ -48,6 +48,12 @@
                 $("#header").append(formattedSkill);
             });
         }
+
+    $("#footerContacts").append(formattedMobile);
+    $("#footerContacts").append(formattedEmail);
+    $("#footerContacts").append(formattedGithub);
+    $("#footerContacts").append(formattedTwitter);
+    $("#footerContacts").append(formattedLocation);
     }
  };
 
@@ -227,24 +233,6 @@ function setUpInternationalizeName() {
     $("#main").append(internationalizeButton);
 }
 
-//setup contact information in the footer
-function setUpFooter() {
-    var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
-    $("#footerContacts").append(formattedMobile);
-
-    var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
-    $("#footerContacts").append(formattedEmail);
-
-    var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
-    $("#footerContacts").append(formattedGithub);
-
-    var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
-    $("#footerContacts").append(formattedTwitter);
-
-    var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
-    $("#footerContacts").append(formattedLocation);
-}
-
 //makes name internationalized
 function inName(name) {
     var names = name.split(" ");
@@ -258,7 +246,6 @@ work.display();
 education.display();
 projects.display();
 setUpMap();
-setUpFooter();
 
 //jquery click events below to add customization to my resume
 $(document).ready(function() {
@@ -286,22 +273,3 @@ $(document).ready(function() {
     });
 });
 
-//This section is unused code from JavaScript Basics course
-
-/*function locationizer(work)
-{
-    var workLocations = [];
-
-    for (var i = 0; i < work.jobs.length; i++)
-    {
-        workLocations.push(work.jobs[i].location);
-    }
-
-    return workLocations;
-}
-
-console.log(locationizer(work));
-*/
-
-//Don't add the internationalize button, it looks odd on the page
-//setUpInternationalizeName();
