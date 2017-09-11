@@ -165,16 +165,12 @@ var Engine = (function(global) {
      * render methods.
      */
     function checkCollisions() {
-    	var enemyWidth = Resources.get(enemy.sprite).width;
-        var enemyHeight = Resources.get(enemy.sprite).height;
-        var playerWidth = Resources.get(player.sprite).width;
-        var playerHeight = Resources.get(player.sprite).height;
-            
+
         allEnemies.forEach(function(enemy) {	
-            if(player.x < enemy.x + enemyWidth && 
-               player.x + playerWidth > enemy.x  &&
-               player.y < enemy.y + enemyWidth &&
-               player.y + playerHeight > enemy.y) {
+            if(player.x < enemy.x + enemy.width && 
+               player.x + player.width > enemy.x  &&
+               player.y < enemy.y + enemy.height &&
+               player.y + player.height > enemy.y) {
                 //collision detected
 			 	player.score--;		 
             	updateScore();

@@ -18,6 +18,10 @@ var Enemy = function() {
 
     //enemies can have a speed in multiple of 5
     this.speed = Math.floor(Math.random() * 5) + 1;
+
+    //store enemy object's width and height, used later for checking collisions
+    this.width = Resources.get(this.sprite).width;
+    this.height = Resources.get(this.sprite).height;
 };
 
 
@@ -57,6 +61,11 @@ var Player = function() {
 
     //maintain score for game
     this.score = 0;
+
+    //store player object's width and height, used later for checking collisions
+    this.width = Resources.get(this.sprite).width;
+    this.height = Resources.get(this.sprite).height;
+
 }
 
 //checks input and player position and changes the coordinates of the player appropriately
