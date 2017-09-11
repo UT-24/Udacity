@@ -164,16 +164,18 @@ var Engine = (function(global) {
      * the data/properties related to the object. Do your drawing in your
      * render methods.
      */
-    function checkCollisions() 
-    {
-        allEnemies.forEach(function(enemy) 
-        {
-        	var enemyWidth = Resources.get(enemy.sprite).width;
-        	var enemyHeight = Resources.get(enemy.sprite).height;
+    function checkCollisions() {
+    	var enemyWidth = Resources.get(enemy.sprite).width;
+        var enemyHeight = Resources.get(enemy.sprite).height;
+        var playerWidth = Resources.get(player.sprite).width;
+        var playerHeight = Resources.get(player.sprite).height;
             
-            if(player.x > enemy.x && player.x < enemy.x + enemyWidth
-             && player.y < enemy.y && player.y > enemy.y - enemyHeight) {
-                
+        allEnemies.forEach(function(enemy) {	
+            if(player.x < enemy.x + enemyWidth && 
+               player.x + playerWidth > enemy.x  &&
+               player.y < enemy.y + enemyWidth &&
+               player.y + playerHeight > enemy.y) {
+                //collision detected
 			 	player.score--;		 
             	updateScore();
             	player.y = 400;
@@ -181,8 +183,7 @@ var Engine = (function(global) {
         });
     }
 
-    function updateScore()
-    {
+    function updateScore() {
     	score.innerHTML = player.score;
     }
 
