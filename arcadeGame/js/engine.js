@@ -23,7 +23,11 @@ var Engine = (function(global) {
         canvas = doc.createElement('canvas'),
         ctx = canvas.getContext('2d'),
         score = doc.createElement('h1'),
-        lastTime;
+        lastTime,
+        enemyWidth = 0,
+        enemyHeight = 0,
+        playerWidth = 0,
+        playerHeight = 0;
 
     canvas.width = 505;
     canvas.height = 606;
@@ -68,6 +72,16 @@ var Engine = (function(global) {
     function init() {
         reset();
         lastTime = Date.now();
+
+        //get enemy and player width and heights for collision checks
+        //only get the width and height for first enemy, since all enemies have same width and height
+    	enemyWidth = Resources.get(allEnemies[0].sprite).width;
+        enemyHeight = Resources.get(allEnemies[0].sprite).height;
+
+        //get player's width and height as well
+        playerWidth = Resources.get(player.sprite).width;
+        playerHeight = Resources.get(player.sprite).height;
+
         main();
     }
 
@@ -157,20 +171,18 @@ var Engine = (function(global) {
         player.render();
     }
 
-        /* This is called by the update function and loops through all of the
-     * objects within your allEnemies array as defined in app.js and calls
-     * their update() methods. It will then call the update function for your
-     * player object. These update methods should focus purely on updating
-     * the data/properties related to the object. Do your drawing in your
-     * render methods.
+     /* This is called by the update function and loops through all of the
+     * objects within your allEnemies array as defined in app.js and checks if the player 
+     * has collided against any of them.  If he has, then his score is decremented and 
+     * his position is reset
      */
     function checkCollisions() {
-
+            
         allEnemies.forEach(function(enemy) {	
-            if(player.x < enemy.x + enemy.width && 
-               player.x + player.width > enemy.x  &&
-               player.y < enemy.y + enemy.height &&
-               player.y + player.height > enemy.y) {
+            if(player.x < enemy.x + enemyWidth && 
+               player.x + playerWidth > enemy.x  &&
+               player.y < enemy.y + enemyWidth &&
+               player.y + playerHeight > enemy.y) {
                 //collision detected
 			 	player.score--;		 
             	updateScore();
