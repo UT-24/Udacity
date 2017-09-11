@@ -174,9 +174,9 @@ var Engine = (function(global) {
             if(player.x > enemy.x && player.x < enemy.x + enemyWidth
              && player.y < enemy.y && player.y > enemy.y - enemyHeight) {
                 
-			 	player.decrementScore();		 
+			 	player.score--;		 
             	updateScore();
-            	player.updateY(400);
+            	player.y = 400;
             }
         });
     }

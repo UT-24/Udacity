@@ -1,4 +1,6 @@
 
+"use strict";
+
 // Enemies our player must avoid
 var Enemy = function() {
     // Variables applied to each of our instances go here,
@@ -61,77 +63,48 @@ var Player = function() {
 Player.prototype.handleInput = function(keyCode) {
     var playerChange = 0;
 
-    if (keyCode === 'left')
-    {
+    if (keyCode === 'left') {
        //every left or right movement, moves the player by 101 px
        playerChange = this.x - 101; 
 
-        if (playerChange > -20)
-        {
-            this.updateX(playerChange);
+        if (playerChange > -20) {
+            this.x = playerChange;
         }
     }
-    else if (keyCode === 'right')
-    {
+    else if (keyCode === 'right') {
         playerChange = this.x + 101;
     
-        if (playerChange < 505)
-        {
-            this.updateX(playerChange);
+        if (playerChange < 505) {
+            this.x = playerChange;
         }
     }
-    else if (keyCode === 'up')
-    {
+    else if (keyCode === 'up') {
          //every up or down movement, moves the player by 83 px
         playerChange = this.y - 83;
 
-         if (playerChange > -20)
-        {
+         if (playerChange > -20) {
+
             //if player's Y is beyond 68 pixel, player has reached the water safely, increment score and reset the player
-            if (playerChange < 68)
-            {
-                this.incrementScore();
-                this.updateY(400);
+            if (playerChange < 68) {
+                this.score++;
+                this.y = 400;
             }
-            else
-            {
-                this.updateY(playerChange);
+            else {
+                this.y = playerChange;
             }
         }
     }
-     else if (keyCode === 'down')
-    {
+     else if (keyCode === 'down') {
        playerChange = this.y + 83;
 
-         if (playerChange < 478)
-        {
-            this.updateY(playerChange);
+         if (playerChange < 478) {
+            this.y = playerChange;
         }
     }
 }
 
 Player.prototype.update = function() {
 };
-
-//update player in Y direction
-Player.prototype.updateY = function(updateValue) {
-    this.y = updateValue;
-};
-
-//update player in X direction
-Player.prototype.updateX = function(updateValue) {
-    this.x = updateValue;
-};
-
-//increments the score for when player reaches the water
-Player.prototype.incrementScore = function() {
- this.score++;
-}
-  
-//decrements the score for when player has a collision etc
-Player.prototype.decrementScore = function() {
- this.score--;
-}
 
 // Draw the player on the screen, required method for game
 Player.prototype.render = function() {
