@@ -75,8 +75,9 @@ $(function() {
                var bodyClass = $(document.body).attr("class");
                expect(bodyClass).toBeDefined();
                expect(bodyClass.length).toBe(0);
-               $('.menu-icon-link').click();
-               var bodyClass = $(document.body).attr("class");
+               
+               $('.menu-icon-link').click();            
+               bodyClass = $(document.body).attr("class");
                expect(bodyClass).toBeDefined();
                expect(bodyClass).toBe("menu-hidden");
          });
