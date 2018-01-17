@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Cat Clicker</title>
+	<style>
+	.image{
+	height:400px;
+	max-width: 500px;
+	margin-left: auto;
+	margin-right:auto;
+	display:block;
+	}
+	.click{
+		text-align:center;
+	}
+	#container{
+		display: flex;
+	}
+	.main{
+		width:50%;
+	}
+	.name{
+		text-align:center;
+	}
+</style>
+</head>
+<body>
+	<div id="container">
+	<ul id="catlist" class="main">
+	</ul>
+		<div class="main">
+			<img class="image" id="i1" alt="cat" >
+			<h2 class="name" id="n1"></h2>
+			<h1 class="click" id="c1"></h1>
+		</div>
+	</div>
+	<script src="js/libs/jquery.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
