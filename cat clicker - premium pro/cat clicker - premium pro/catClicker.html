@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Cat Clicker</title>
+	<style>
+	.image{
+	height:400px;
+	max-width: 500px;
+	margin-left: auto;
+	margin-right:auto;
+	display:block;
+	}
+	.click{
+		text-align:center;
+	}
+	#container{
+		display: flex;
+	}
+	.main{
+		width:50%;
+	}
+	.name{
+		text-align:center;
+	}
+	.hide{
+		display:none;
+	}
+</style>
+</head>
+<body>
+	<div id="container">
+	<ul id="catlist" class="main">
+	</ul>
+		<div class="main">
+			<img class="image" id="i1" alt="cat" >
+			<h2 class="name" id="n1"></h2>
+			<h1 class="click" id="c1"></h1>
+		</div>
+	</div>
+	<button id="b1">Admin
+	</button>
+	<div id="admin-input" class="hide">
+			<label> Cat Name:</label><input id="name-change" type="text">
+			<label> Cat File:</label><input id="src-change" type="text">
+			<label> Clicks:</label><input id="click-change" type="text">
+	</div>
+	<button class="hide" id="save"> Save
+	</button>
+	<button class="hide" id="cancel"> Cancel
+	</button>
+	<script src="js/libs/jquery.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

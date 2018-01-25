@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Cat Clicker</title>
+	<style>
+	.image{
+	height:400px;
+	max-width: 500px;
+	margin-left: auto;
+	margin-right:auto;
+	display:block;
+	}
+	.click, .level, .nn{
+		text-align:center;
+	}
+	#container{
+		display: flex;
+	}
+	.main{
+		width:50%;
+	}
+	.name{
+		text-align:center;
+	}
+</style>
+</head>
+<body>
+	<div id="container">
+		<ul data-bind="foreach: catList" class="main">
+			<li>
+        			<a href="#" data-bind="click: $parent.changeCat, text: $data.name"></a>
+    		</li>
+		</ul>
+		<div class="main" data-bind="with: currentCat">
+			<img class="image" data-bind="click: $parent.incrementClicks, attr: {src: src}" alt="cat" >
+			<h2 class="name" data-bind="text: name" ></h2>
+			<h1 class="click" data-bind="text: clickCount"></h1>
+			<h3 class= "level" data-bind="text: level"></h3>
+			<h3 class="nn"> Nick Names: </h3>
+			<ul class="nn" data-bind="foreach: nicknames">
+   				<li>
+        			<b data-bind="text: $data"></b>
+    			</li>
+			</ul>
+		</div>
+	</div>
+	<script src="js/libs/jquery.min.js"></script>
+	<script src="js/libs/knockout.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
