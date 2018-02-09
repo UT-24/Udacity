@@ -82,22 +82,13 @@
     	 	padding: 5px;
     	 	width: 100%;
     	 }
-    	.fb {
-    		width: 20%;
-    		background: none; 
-    		text-align: center;
-    		cursor: pointer;
-    	}
-    	.fb .fi {
-    		max-width: 80%;
-    	}
     	.filter {
-    		width: 70%;	
+    		width: 100%;
     		font-family: "Courier New", sans-serif; }
     	}
     	.place-list{
     		padding: 0px;
-    		list-style: none;
+    		list-style-type: none;
     	}
 
 	</style>
@@ -114,11 +105,14 @@
 		</div>
 		<div class="second-row">
 			<div class="filter-container">
-				<input class="filter" type="text"> </input>
-				<button class="fb" data-bind="filterList"><img class="fi" src="img/filter.jpg"></button>
+				    <select class="filter" data-bind="options: markersList,
+                       optionsText: 'title',
+                       value: currentFilter,
+                       optionsCaption: 'All Locations'">
+                    </select>
 			</div>
 		</div>
-  		<ul class="place-list" data-bind="foreach: markersList" >    
+  		<ul class="place-list" data-bind="foreach: filterList" >    
   			<li>
         		<a href="#" data-bind="click: $parent.animateMarker, text: $data.title"></a>
     		</li>	
