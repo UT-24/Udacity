@@ -1,33 +1,42 @@
 
  html, body { 
- 	 		 -webkit-box-sizing: border-box;
-			 -moz-box-sizing: border-box;
-			  box-sizing: border-box;
- 			  height: 100%; 
- 			  margin: 0; 
- 			  padding: 0; 
- 			  font-family: "Courier New", sans-serif; 
-              -webkit-padding: 0;
- 			}
- #map { height: 93%; }
+	-webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+     box-sizing: border-box;
+	 height: 100%; 
+	 margin: 0; 
+	 padding: 0; 
+	 font-family: "Courier New", sans-serif; 
+    -webkit-padding: 0;
+ }
+
+ #map { 
+    height: 93%; 
+ }
+
  header { 
- 		   height: 7%;
- 		   width: 100%;
- 		   display:flex;
- 		   background:#e3e3e5;
- 		   border-bottom:1px solid #B2ADAD; 
- 		}
- .hb { 
- 		background: none; 
- 		border: none; 
- 		outline: none; 
- 		cursor: pointer;
- 		width:5%;
- 	}
+ 	height: 7%;
+ 	width: 100%;
+ 	display:flex;
+ 	background:#e3e3e5;
+ 	border-bottom:1px solid #B2ADAD; 
+ }
+
+ .hamburger { 
+    background: none; 
+	border: none; 
+	outline: none; 
+	cursor: pointer;
+	width:5%;
+ }
+
  .heading { 
- 			text-align: center; 
- 			width: 95%;
- 		}
+	text-align: center; 
+	width: 95%;
+ }
+
+ /* the example for implementing a sliding menu was obtained from a w3schools exercise
+ https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_sidenav */
  .menu {
     height: 100%;
     width: 0;
@@ -39,55 +48,63 @@
     overflow-x: hidden;
     transition: 0.5s;
     border-right: 1px solid #B2ADAD;
-}
+ }
 
-.menu a {
+ .menu a {
     padding: 8px 8px 8px 8px;
     text-decoration: none;
     display: block;
     transition: 0.3s;
     color: #000000;
     text-align: left;
-}
+ }
 
-.menu a:hover {
+ .menu a:hover {
     color: #ffffff;
-}
+ }
 
- .menu-hide { width: 0%; }
- .menu-show { width: 20%; }
+ .menu-hide { 
+    width: 0%; 
+ }
 
-.first-row {
+ .menu-show { 
+    width: 20%; 
+ }
+
+ .first-row {
 	display: flex;
 	padding-top: 10px;
-}
-.second-row {
+ }
+
+ .second-row {
 	display: flex;
     padding: 5px; 
-}
-.close {
+ }
+
+ .close {
 	width: 10%;
 	background: none; 
 	border: none; 
 	outline: none; 
 	cursor: pointer;
-}
-#label {
+ }
+
+ #label {
 	width: 90%;
 	padding: 5px;
-}
+ }
 
-.filter {
+ .filter {
 	font-family: "Courier New", sans-serif;
     width: 100%;
-}
+ }
 
-.place-list {
+ .place-list {
 	padding-left: 2%;
 	list-style-type: none;
-}
+ }
 
-.place {
+ .place {
 	list-style-type: none;
-}
+ }
 

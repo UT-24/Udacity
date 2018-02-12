@@ -7,15 +7,18 @@
 </head>
 <body>
 	<header>
-		<button class="hb">&#9776;</button>
+		<!-- Button showing hamburger symbol -->
+		<button class="hamburger">&#9776;</button>
 		<h4 class="heading"> Best Places To Visit in Atlanta (as per Uthra Ramaswamy) </h4>
 	</header>
 	<div class="menu">
 		<div class="first-row">
 			<span id="label">Filter: </span>
+			<!-- Button showing X -->
 			<button class="close"><strong>&times;</strong></button>
 		</div>
-		<div class="second-row">		
+		<div class="second-row">	
+		<!--Reference for options binding: http://knockoutjs.com/documentation/options-binding.html-->	
 		    <select class="filter" data-bind="options: markersList,
                optionsText: 'title',
                value: currentFilter,
