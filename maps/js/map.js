@@ -96,9 +96,21 @@ var ViewModel = function() {
 					return (self.currentFilter().title === marker.title);
  				});
 
+ 				self.updateMarkersBasedOnFilter(self.currentFilter());
 				return filteredArray;
 		}
 	}, self);
+
+	self.updateMarkersBasedOnFilter = function(selectedMarker){
+		self.markersList().forEach(function(marker){
+			if (marker.title !== selectedMarker.title){
+				marker.setMap(null);
+			}
+			else {
+				marker.setMap(map);
+			}
+		});
+	}
 
 	self.updateContentWithGeocode = function(markerInfo){
 		var geocoder  = new google.maps.Geocoder();             // create a geocoder object         
