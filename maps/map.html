@@ -1,97 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
-	<style>
-	     html, body { 
-	     	 		 -webkit-box-sizing: border-box;
-  					 -moz-box-sizing: border-box;
-  					  box-sizing: border-box;
-	     			  height: 100%; 
-	     			  margin: 0; 
-	     			  padding: 0; 
-	     			  font-family: "Courier New", sans-serif; 
-	     			}
-    	 #map { height: 93%; }
-    	 header { 
-    	 		   height: 7%;
-    	 		   width: 100%;
-    	 		   display:flex;
-    	 		   background:#e3e3e5;
-    	 		   border-bottom:1px solid #B2ADAD; 
-    	 		}
-    	 .hb { 
-    	 		background: none; 
-    	 		border: none; 
-    	 		outline: none; 
-    	 		cursor: pointer;
-    	 		width:5%;
-    	 	}
-    	 .heading { 
-    	 			text-align: center; 
-    	 			width: 95%;
-    	 		}
-		 .menu {
-		    height: 100%;
-		    width: 0;
-		    position: fixed;
-		    z-index: 1;
-		    top: 0;
-		    left: 0;
-		    background-color: #e3e3e5;
-		    overflow-x: hidden;
-		    transition: 0.5s;
-		    border-right: 1px solid #B2ADAD;
-		}
-
-		.menu a {
-		    padding: 8px 8px 8px 8px;
-		    text-decoration: none;
-		    display: block;
-		    transition: 0.3s;
-		    color: #000000;
-		    text-align: left;
-		}
-
-		.menu a:hover {
-		    color: #ffffff;
-		}
-
-		 .menu-hide { width: 0%; }
-    	 .menu-show { width: 20%; }
-
-    	.first-row {
-    		display: flex;
-    		padding-top: 10px;
-    	}
-    	.second-row {
-    		display: flex;
-    	}
-    	.close {
-    		width: 10%;
-    		background: none; 
-    		border: none; 
-    		outline: none; 
-    		cursor: pointer;
-    	}
-    	#label {
-    		width: 90%;
-    		padding: 5px;
-    	}
-       .filter-container{
-    	 	padding: 5px;
-    	 	width: 100%;
-    	 }
-    	.filter {
-    		width: 100%;
-    		font-family: "Courier New", sans-serif; }
-    	}
-    	.place-list{
-    		padding: 0px;
-    		list-style-type: none;
-    	}
-
-	</style>
+	<title>NeighborHood Map</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
 	<header>
@@ -103,21 +14,19 @@
 			<span id="label">Filter: </span>
 			<button class="close"><strong>&times;</strong></button>
 		</div>
-		<div class="second-row">
-			<div class="filter-container">
-				    <select class="filter" data-bind="options: markersList,
-                       optionsText: 'title',
-                       value: currentFilter,
-                       optionsCaption: 'All Locations'">
-                    </select>
-			</div>
+		<div class="second-row">		
+		    <select class="filter" data-bind="options: markersList,
+               optionsText: 'title',
+               value: currentFilter,
+               optionsCaption: 'All Locations'">
+            </select>
 		</div>
   		<ul class="place-list" data-bind="foreach: filterList" >    
-  			<li>
+  			<li class="place">
         		<a href="#" data-bind="click: $parent.animateMarker, text: $data.title"></a>
     		</li>	
   		</ul>
-	</div> 
+  	</div>
 	<div id="map">
 	</div>
 	<script src="js/libs/jquery.min.js"></script>

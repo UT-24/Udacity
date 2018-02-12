@@ -6,24 +6,39 @@ var Model = {
 		content: "Uthra Ramaswamy lives here."
 	},
 	{
-		position: {lat: 33.740386, lng:-84.34542},
-		title: "Joe's Coffee Shop",
-		content: "Popular coffee shop in East Atlanta Village"
+		position: {lat: 33.758665, lng:-84.391449},
+		title: "Tabernacle ATL",
+		content: "One of the best music venues in ATL."
 	},
 	{
-		position: {lat: 33.739481, lng:-84.344303},
-		title: "The Midway Pub",
-		content: "Popular bar in East Atlanta Village"
+		position: {lat: 33.755889,  lng:-84.401064},
+		title: "Mercedes Benz Stadium",
+		content: "Brand new venue for ATL sports!"
 	},
 	{
 		position: {lat: 33.734098, lng: -84.372268},
 		title: "Zoo Atlanta",
-		content: "Located in Grant Park.  Houses Kangaroos, Pandas and other non-dog animals."
+		content: "Located in Grant Park.  Houses Kangaroos, Pandas - occasionally a dog or cat gets in."
 	},
 	{
 		position: {lat: 33.756767, lng: -84.364034},
 		title: "Krog Street Market",
-		content: "Gives Ponce City Market a run for its money."
+		content: "Like Ponce City Market.."
+	},
+	{
+		position: {lat: 33.771946, lng: -84.366527},
+		title: "Ponce City Market",
+		content: "Like Chelsea Market.."
+	},
+	{
+		position: {lat: 33.772585, lng: -84.385603},
+		title: "Fox Theater",
+		content: "For all your theater needs."
+	},
+	{
+		position: {lat: 33.785765, lng: -84.374271},
+		title: "Piedmont Park",
+		content: "Home of the Dogwood Festival."
 	}
   ]
 };
@@ -47,14 +62,11 @@ var ViewModel = function() {
 				});
 
 				self.markersList.push(marker);
-				var infoWindow = new google.maps.InfoWindow({
-					content: markerInfo.content
-				});
 				
 				//when marker is clicked on map, it should open an info window and drop in map
 				marker.addListener("click", function(){
          			 marker.setAnimation(google.maps.Animation.DROP);	 
-       				 infoWindow.open(map, marker);
+         			 self.updateContentWithGeocode(markerInfo);				 
 				});
 			});
 	};
@@ -67,6 +79,11 @@ var ViewModel = function() {
 	//marker should drop down on map when its list item is clicked
 	self.animateMarker = function(clickedMarker){
 		clickedMarker.setAnimation(google.maps.Animation.DROP);	
+		self.getMarkerInfos().forEach(function(markerInfo){
+			if (markerInfo.title === clickedMarker.title){
+				 self.updateContentWithGeocode(markerInfo);		
+			}
+		});
 	} 
 
 	// for the first time, calculate filter list as just the marker list (no filter)
@@ -82,13 +99,59 @@ var ViewModel = function() {
 				return filteredArray;
 		}
 	}, self);
+
+	self.updateContentWithGeocode = function(markerInfo){
+		var geocoder  = new google.maps.Geocoder();             // create a geocoder object         
+		geocoder.geocode({location: markerInfo.position}, function (results, status) {
+			if(status == google.maps.GeocoderStatus.OK) {           // if geocode success
+				address = results[0].formatted_address;  
+				var updatedContent = "<p>" + markerInfo.content + "</p>" + 
+							"<p> Location: " + address + "</p>";
+         		self.getWikiResults(markerInfo.title, updatedContent);    
+			}   
+		});  
+	}
+
+	self.getWikiResults = function(title, content){
+	var windowContent = content;
+	//get wikipedia entry for the location
+    var wikiRequestTimeout = setTimeout(function(){
+    	windowContent += "<p>Wiki entry for " + title + " could not be fetched.</p>";
+    	self.updateInfoWindow(title, windowContent);
+    }, 2000);
+
+    var wikiURL = "https://en.wikipedia.org/w/api.php?action=opensearch&format=json&callback=wikiCallback&search=" + title; 
+    $.ajax(wikiURL, {
+    	"dataType" : "jsonp",
+    	"success": function(data, textStatus, jQXHR){
+    		var wikiLink = data[3];
+	    	var href = wikiLink[0];
+	    	var htmlItem = "<p> <a href='" + href +"'>" + title + "</a> </p>";
+			windowContent+= "<p> Wiki Entries for " + title + ":</p>";
+			windowContent += htmlItem;
+			self.updateInfoWindow(title, windowContent);
+	    	clearTimeout(wikiRequestTimeout);
+    	}
+	});
+  }
+
+  self.updateInfoWindow = function(title, windowContent){
+  	self.markersList().forEach(function(marker) {
+  		if (marker.title === title) {
+  			var infoWindow = new google.maps.InfoWindow({
+  				"content": windowContent
+  			});
+  			infoWindow.open(map, marker);
+  		}
+  	});
+  }
 }
 
 //this view is just to manage the map
 var View1 = {
 	init: function(){
 			map = new google.maps.Map(document.getElementById('map'), {
-			center:{lat:33.732337, lng:-84.344759},
+			center:{lat:33.758665, lng:-84.391449},
 			zoom: 13
 		});
 	}
