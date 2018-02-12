@@ -183,7 +183,7 @@ var ViewModel = function() {
   			}
   		});
   	};
-}
+};
 
 // this view is just to manage the map
 var View1 = {
