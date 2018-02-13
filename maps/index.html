@@ -4,12 +4,15 @@
 	<title>NeighborHood Map</title>
 	<link rel="icon" href="img/google_map.png">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
 	<header>
 		<!-- Button showing hamburger symbol -->
 		<button class="hamburger">&#9776;</button>
-		<h4 class="heading"> Best Places To Visit in Atlanta (as per Uthra Ramaswamy) </h4>
+		<div class="heading-container">
+			<p class="heading"> Best Places To Visit in Atlanta (as per Uthra Ramaswamy) </p>
+		</div>
 	</header>
 	<div class="menu">
 		<div class="first-row">
@@ -36,7 +39,7 @@
 	<script src="js/libs/jquery.min.js"></script>
 	<script src="js/libs/knockout.js"></script>
     <script src="js/map.js"></script>
-	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDndIZcDjWw8u8tWotH7As1p9i11MndTPI&v=3&callback=initApp">
+	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDndIZcDjWw8u8tWotH7As1p9i11MndTPI&v=3&callback=initApp" onerror="displayMapLoadError()">
 	</script>
 </body>
 </html>

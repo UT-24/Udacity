@@ -4,7 +4,9 @@ Neighborhood Map
 
 ### Using the map
 
-To open the map, go to [this](https://ut-24.github.io/Udacity/maps/) link.
+To open the map online, go to [this](https://ut-24.github.io/Udacity/maps/) link.
+
+To open the map on your local machine, open the *index.html* file on your browser.
 
 ### Features
 * To view details about a place, click on the map marker (red icon) on the page.  Details will include name, description, address and a wikipedia link.

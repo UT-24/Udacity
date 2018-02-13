@@ -32,7 +32,15 @@
 
  .heading { 
 	text-align: center; 
-	width: 95%;
+    width: 100%;
+    font-size: 15px;
+    font-weight: bold;
+ }
+
+ .heading-container{
+    width: 95%;
+    display: flex;
+    flex-wrap:wrap;
  }
 
  /* the example for implementing a sliding menu was obtained from a w3schools exercise
@@ -108,3 +116,52 @@
 	list-style-type: none;
  }
 
+ .error {
+    text-align: center;
+    padding-top: 20%;
+ }
+
+  @media only screen and (max-width: 1150px) and (min-width: 951px) {
+     .menu-show { 
+    width: 25%; 
+     }
+  }
+
+  @media only screen and (max-width: 950px) and (min-width: 771px) {
+     .menu-show { 
+    width: 30%; 
+     }
+  }
+
+ @media only screen and (max-width: 770px) and (min-width: 651px) {
+     .menu-show { 
+    width: 35%; 
+     }
+     .heading{
+        font-size: 13px;
+     }
+  }
+
+   @media only screen and (max-width: 650px) and (min-width: 501px) {
+     .menu-show { 
+    width: 45%; 
+     }
+      .heading{
+        display: none;
+     }
+  }
+
+ @media only screen and (max-width: 500px) and (min-width: 351px) {
+     .menu-show { 
+    width: 60%; 
+     }
+     .heading{
+        display: none;
+     }
+  }
+
+@media only screen and (max-width: 350px) {
+     .menu-show { 
+    width: 100%; 
+     }
+  }

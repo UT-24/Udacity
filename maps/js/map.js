@@ -49,6 +49,9 @@ var ViewModel = function() {
 	var self = this;
 	self.currentFilter = ko.observable();
 	self.markersList = ko.observableArray([]);
+	self.infoWindow = new google.maps.InfoWindow({
+  					"content": ""
+  				});
 
 	// called after google maps api returns
 	self.init = function(){
@@ -95,7 +98,11 @@ var ViewModel = function() {
 	// and update visible markers
 	// reference for filter:  http://www.knockmeout.net/2011/04/utility-functions-in-knockoutjs.html
 	self.filterList = ko.computed(function() {
-		if (!self.currentFilter()) {
+		if (!self.currentFilter()) {	
+			self.markersList().forEach(function(marker){
+				marker.setMap(map);
+			});
+
 			return self.markersList();
 		} 
 		else {
@@ -111,7 +118,7 @@ var ViewModel = function() {
 	// this function is called when a filter is applied to 
 	// update visible markers, based on selected filter
 	self.updateMarkersBasedOnFilter = function(selectedMarker){
-		self.markersList().forEach(function(marker){
+		self.markersList().forEach(function(marker){	
 			if (marker.title !== selectedMarker.title){
 				marker.setMap(null);
 			}
@@ -176,10 +183,8 @@ var ViewModel = function() {
   	self.showInfoWindow = function(title, windowContent){
   		self.markersList().forEach(function(marker) {
   			if (marker.title === title) {
-  				var infoWindow = new google.maps.InfoWindow({
-  					"content": windowContent
-  				});
-  				infoWindow.open(map, marker);
+  				self.infoWindow.setContent(windowContent);
+  				self.infoWindow.open(map, marker);
   			}
   		});
   	};
@@ -217,5 +222,8 @@ function initApp(){
 	ko.applyBindings(koViewModel);
 }
 
+function displayMapLoadError(){
+	$('#map').html("<h3 class='error'> Unable to load map from google.  Please try again later. </h3>");
+}
 			
 
