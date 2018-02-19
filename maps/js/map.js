@@ -5,43 +5,68 @@ var Model = {
 	allMarkerInfos : [{
 		position: {lat: 33.732814, lng:-84.345038},
 		title: "Home",
-		content: "Uthra Ramaswamy lives here."
+		content: "Uthra, Samir and Guppie live here."
 	},
 	{
 		position: {lat: 33.758665, lng:-84.391449},
 		title: "Tabernacle ATL",
-		content: "One of the best music venues in ATL."
+		content: "Uthra and Samir attended a Kaleo concert here, Fall 2017."
 	},
 	{
-		position: {lat: 33.755889,  lng:-84.401064},
-		title: "Mercedes Benz Stadium",
-		content: "Brand new venue for ATL sports!"
+		position: {lat: 33.757289,  lng:-84.396324},
+		title: "Philips Arena",
+		content: "Uthra watched her first Hawks game here."
 	},
 	{
 		position: {lat: 33.734098, lng: -84.372268},
 		title: "Zoo Atlanta",
-		content: "Located in Grant Park.  Houses Kangaroos, Pandas - occasionally a dog or cat gets in."
+		content: "Uthra felt at peace observing the Kangaroos and Pandas."
 	},
 	{
 		position: {lat: 33.756767, lng: -84.364034},
 		title: "Krog Street Market",
-		content: "Like Ponce City Market.."
+		content: "Varuni Napoli is as good as Antico."
 	},
 	{
 		position: {lat: 33.771946, lng: -84.366527},
 		title: "Ponce City Market",
-		content: "Like Chelsea Market.."
+		content: "Every beltline walk leads to Ponce City Market."
 	},
 	{
 		position: {lat: 33.772585, lng: -84.385603},
-		title: "Fox Theater",
-		content: "For all your theater needs."
+		title: "Fox Theater ATL",
+		content: "Uthra's first Year Up Atlanta graduation was here (Jan 2015)."
 	},
 	{
 		position: {lat: 33.785765, lng: -84.374271},
 		title: "Piedmont Park",
-		content: "Home of the Dogwood Festival."
-	}
+		content: "Uthra and Samir always had a fun time at the Dogwood Festival dog show."
+	},
+	{
+		position: {lat: 33.759384, lng: -84.363975},
+		title: "Beltline ATL",
+		content: "Uthra trained here every week for her first marathon."
+	},
+	{
+		position: {lat: 33.756286, lng: -84.356226},
+		title: "Inman Park",
+		content: "Uthra and Samir's wedding reception was at The Trolley Barn, best party ever!"
+	},
+	{
+		position: {lat: 33.753254, lng: -84.395773},
+		title: "Richard B. Russell Federal Building",
+		content: "Samir works here. Uthra and Samir also got married here."
+	},
+	{
+		position: {lat: 33.747495, lng: -84.375098},
+		title: "Oakland Cemetery Atlanta",
+		content: "Start venue for the St.Patrick's Day ATL Pub Run (organized by Samir and friends)"
+	},
+	{
+		position: {lat: 33.740597, lng: -84.346975},
+		title: "East Atlanta Village",
+		content: "Endless hours have been spent by Uthra, Samir and Guppie at: EAAC, EAV Fitness, Argosy, Holy Taco, Tomatillos, We Suki Suki, Midway and Joe's Coffee Shop!"
+	},
   ]
 };
 
